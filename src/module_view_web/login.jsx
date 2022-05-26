@@ -8,6 +8,7 @@ const Login = ()=>{
                 <input type="text" placeholder="email" />
                 <input type="password" placeholder="password" />
                 <button>Login</button>
+                <button>aaa</button>
                 <a href="#">Forgot password?</a>
             </form>
         </div>
