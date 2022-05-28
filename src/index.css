@@ -11,3 +11,90 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.form{
+  background-color: white;
+  border-radius: 5px;
+  width: 550px;
+  margin: 20px auto;
+  padding: 20px;
+  /* height: 600px; */
+}
+.form h1{
+  text-align: center;
+}
+.form .btn{
+  border: none;
+  cursor: pointer;
+  margin: 0 10px;
+}
+.login-else,.cnt{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-else img{
+  width: 100px;
+}
+form {
+  margin: auto;
+}
+.input-container{
+  margin: 20px 0;
+  width: 100%;
+}
+.input-container input{
+  width: 60%;
+  padding: 10px 10px;
+  outline: none;
+  border: 1px solid rgb(207, 205, 205);
+  background-color: white !important;
+}
+.button-container input{
+  border: none;
+  background-color: chocolate;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.hero-form{
+  justify-content: space-evenly;
+}
+.footer-form{
+  text-align: center;
+  margin-top: 20px;
+}
+.fg-p input{
+width: 30%;
+}
+.btn-fg input{
+  padding: 10px 44px;
+}
+.form-body{
+  text-align: left;
+  padding: 20px 10px;
+}
+.button-container.btn-fg {
+  margin-bottom: 20px;
+}
+.forget-pass-page a {
+  text-decoration: none;
+  color: black;
+  transition: all ease-in-out 0.3s;
+  
+  
+}
+.forget-pass-page a:hover {
+  color: chocolate;
+}
+.form-body > *{
+  padding: 5px;
+}
+
+.form__label{
+  width: 40%;
+}
+
+.form_input{
+  width: 60%;
+}
+
