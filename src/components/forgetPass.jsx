@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-function ForgetPass(props) {
+import Request from "../api/instance";
+const ForgetPass = () => {
   const [user, setUser] = useState("");
   const haldeClick = () => {
-    console.log("getPass", user);
+    Request(`Login/ForgotPassword/${user}`, "GET").then((res) => {
+      console.log(res);
+    });
   };
   return (
     <div className="forget-pass-page form">

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import fb from "../images/fb.png";
 import gg from "../images/gg.png";
-
-function Register(props) {
+import Request from "../api/instance";
+const Register = () => {
   const [formValues, setFormValues] = useState({});
   const hanldeChange = (e) => {
     const { name, value } = e.target;
@@ -10,7 +10,9 @@ function Register(props) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("formValues", formValues);
+    Request("Login/Register", "POST", formValues).then((res) => {
+      console.log(res);
+    });
   };
   return (
     <div>
