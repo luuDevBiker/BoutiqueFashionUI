@@ -15,17 +15,17 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+      <Header />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forget-password" element={<ForgetPass />} />
         <Route path="/table" element={<TableComponent />} />
         <Route path="/product-detail" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/payment" element={<Payment />} />
-        <Route path="/header" element={<Header />} />
-        <Route path="/footer" element={<Footer/>}/>
       </Routes>
+      <Footer/>
       </BrowserRouter>
     </div>
   );

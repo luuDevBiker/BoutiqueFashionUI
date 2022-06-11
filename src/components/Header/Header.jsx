@@ -5,7 +5,7 @@ import anh4 from "../../images/dress 1.png"
 import anh3 from "../../images/trousers 1.png"
 import anh2 from "../../images/hawaiian-shirt 1.png"
 import anh5 from "../../images/online-shopping 1.png"
-import "../../components/Header/Header.css"
+import "../../components/Header/header.css"
 function Header() {
     return (
         <>
@@ -24,14 +24,14 @@ function Header() {
                         </div>
                         <div className="mt-8 ml-40">
                             <div className="px-3">
-                                <Link className="px-3 hover:underline" to={"/Login"}>
+                                <Link className="px-3 hover:underline" to={"/login"}>
                                     Đăng Nhập
                                 </Link>
 
-                                <Link className="px-3 hover:underline" to={"/123"}>
+                                <Link className="px-3 hover:underline" to={"/register"}>
                                     Đăng Ký
                                 </Link>
-                                <Link className="px-3" to={"/123"}>
+                                <Link className="px-3" to={"/cart"}>
                                     <i class="fa-solid fa-cart-shopping"> </i>
                                 </Link>
                             </div>
