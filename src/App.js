@@ -1,7 +1,7 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import ForgetPass from "./components/ForgetPass";
-import Login from "./components/Login";
-import Register from "./components/Register";
+import ForgetPass from "./components/forgetPass";
+import Login from "./components/login";
+import Register from "./components/register";
 import "./App.css";
 
 function App() {
