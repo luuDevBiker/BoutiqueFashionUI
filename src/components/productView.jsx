@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-import { withRouter } from 'react-router'
+// import { withRouter } from 'react-router'
 
 import { useDispatch } from 'react-redux'
 
@@ -210,4 +210,5 @@ ProductView.propTypes = {
     product: PropTypes.object
 }
 
-export default withRouter(ProductView)
+export default ProductView;
+// export default withRouter(ProductView)
