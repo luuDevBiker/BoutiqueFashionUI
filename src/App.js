@@ -7,12 +7,12 @@ import { TableComponent } from "./components/table";
 import ProductDetail from "./components/productDetails";
 import { Cart } from "./components/cart";
 import { Payment } from "./components/payment";
-import Header from".//pages/header";
+import Header from"./pages/header";
 import Footer from"./pages/footer";
 import Home from "./pages/home";
 import Product from "./components/product";
-import Catalog from "./components/catalog";
-
+import ShowProduct from './components/showProduct';
+import Test from './components/test';
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -31,7 +31,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/payment" element={<Payment />} />
         <Route path='/catalog/:slug' component={Product}/>
-        <Route path='/catalog' component={Catalog}/>
+        <Route path='/catalog' component={<Test/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>
