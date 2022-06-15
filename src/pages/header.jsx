@@ -9,12 +9,6 @@ import anh2 from "../images/hawaiian-shirt 1.png";
 import anh5 from "../images/online-shopping 1.png";
 import "../pages/header.css";
 function  Header() {
-  var nodes = Array.prototype.slice.call(document.getElementsByTagName("img"));
-  console.log(nodes);
-  const getIndex = (el) => {
-    console.log(el);
-    console.log(nodes.indexOf(el));
-  };
   return (
     <div className="mb-56">
       <div className="bgi">
@@ -22,7 +16,7 @@ function  Header() {
           <div className="grid grid-cols-3">
             <div className=" mt-3 ml-3">
               <Link id="logo" to="/">
-                <img onClick={getIndex(this)} id="img-logo" src={Logo} alt="" />
+                <img id="img-logo" src={Logo} alt="" />
               </Link>
             </div>
             <div className="">

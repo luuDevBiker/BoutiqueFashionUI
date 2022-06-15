@@ -1,23 +1,35 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
+import Request from '../api/instance'
 import Helmet from '../components/helmet'
 import HeroSlider from '../components/heroSlider'
 import heroSliderData from '../assets/fake-data/hero-slider'
-import Section, { SectionTitle, SectionBody } from '../components/section'
 import PolicyCard from '../components/policyCard'
 import Grid from '../components/grid'
 import ProductCard from '../components/productCard'
+import { useState } from 'react'
+import Section, { SectionTitle, SectionBody } from '../components/section'
+
+import { Link } from 'react-router-dom'
+import { getAllProducts , getAllProductsByName } from '../api/products'
 
 import policy from '../assets/fake-data/policy'
 import productData from '../assets/fake-data/products'
-
 import banner from '../assets/images/banner.png'
+import { useEffect } from 'react'
 
 
 const Home = () => {
+    const [products, setProducts] = useState()
+    useEffect (() => {
+        getAllProducts().then(res => {
+            setProducts(res)
+        })
+    },[]);
+    console.log(products);
     return (
         <Helmet title="Trang chủ">
+
             {/* hero slider */}
 
             <HeroSlider
@@ -53,7 +65,15 @@ const Home = () => {
             </Section>
 
             {/* end policy section */}
-
+            <div>      
+                {
+                    products && products.map((item, index) => 
+                        <Link key={index} to="/product">
+                            <div>{item.productId}</div>
+                        </Link> 
+                    )
+                }
+            </div>
             {/* best selling section */}
 
             <Section>

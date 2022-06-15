@@ -11,7 +11,8 @@ axios.create({
     "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization, Access-Control-Allow-Credentials",
     "Access-Control-Allow-Credentials": true,
     "Access-Control-Max-Age": "1728000",
-    "Access-Control-Expose-Headers": "*"
+    "Access-Control-Expose-Headers": "*",
+    'x-rapidapi-key': process.env.RAPIDAPI_KEY
   },
 });
 
