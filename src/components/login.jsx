@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import fb from "../images/fb.png";
 import gg from "../images/gg.png";
 import { Link } from "react-router-dom";
@@ -7,11 +6,9 @@ import { useForm } from "react-hook-form";
 
 const Login = () => {
   const { register, handleSubmit, errors } = useForm();
-  const onLogin = (data) => {
-    data.userName = "";
-    data.phoneNumber = 0;
+  const onLogin = async (data) => {
     console.log(data);
-    Request("Login/CheckLogin", "POST", data)
+    await Request("Login/CheckLogin", "POST", data)
       .then((res) => {
         console.log(res);
       });
@@ -33,9 +30,9 @@ const Login = () => {
             <div className="input-container cnt">
               <input
                 type="text"
-                placeholder="Email"
+                placeholder="UserName"
                 required
-                {...register("email",{ required: true })}
+                {...register("UserName",{ required: true })}
               />
             </div>
             <div className="input-container cnt">
@@ -43,7 +40,7 @@ const Login = () => {
                 type="password"
                 placeholder="Mật khẩu"
                 required
-                {...register("password",{ required: true })}
+                {...register("Password",{ required: true })}
               />
             </div>
             <div className="hero-form cnt">

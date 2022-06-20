@@ -1,6 +1,4 @@
-import React from 'react'
-
-import Request from '../api/instance'
+import React , { useEffect } from 'react'
 import Helmet from '../components/helmet'
 import HeroSlider from '../components/heroSlider'
 import heroSliderData from '../assets/fake-data/hero-slider'
@@ -14,17 +12,16 @@ import { Link } from 'react-router-dom'
 import { getAllProducts , getAllProductsByName } from '../api/products'
 
 import policy from '../assets/fake-data/policy'
-import productData from '../assets/fake-data/products'
 import banner from '../assets/images/banner.png'
-import { useEffect } from 'react'
-
 
 const Home = () => {
     const [products, setProducts] = useState()
     useEffect (() => {
         getAllProducts().then(res => {
             setProducts(res)
-        })
+        }).catch(err => {
+            console.log(err)
+        });
     },[]);
     console.log(products);
     return (
@@ -65,15 +62,7 @@ const Home = () => {
             </Section>
 
             {/* end policy section */}
-            <div>      
-                {
-                    products && products.map((item, index) => 
-                        <Link key={index} to="/product">
-                            <div>{item.productId}</div>
-                        </Link> 
-                    )
-                }
-            </div>
+
             {/* best selling section */}
 
             <Section>
@@ -88,54 +77,19 @@ const Home = () => {
                         gap={20}
                     >
                         {
-                            productData.getProducts(4).map((item, index) => (
-                                <ProductCard
-                                    key={index}
-                                    img01={item.image01}
-                                    img02={item.image02}
-                                    name={item.title}
-                                    price={Number(item.price)}
-                                    slug={item.slug}
-                                />
-                                // console.log(item.slug)
+                            products && products.map((item, index) => (
+                            <Link key={index} to={`catalog/${item.skuId}`}>
+                            <ProductCard  items={item}/>
+                            </Link>
                             ))
                         }
+                        
+                       
                     </Grid>
                 </SectionBody>
             </Section>
-
+            
             {/* end best selling section */}
-
-            {/* new arrival section */}
-
-            <Section>
-                <SectionTitle>
-                    sản phẩm mới
-                </SectionTitle>
-                <SectionBody>
-                    <Grid
-                        col={4}
-                        mdCol={2}
-                        smCol={1}
-                        gap={20}
-                    >
-                        {
-                            productData.getProducts(8).map((item, index) => (
-                                <ProductCard
-                                    key={index}
-                                    img01={item.image01}
-                                    img02={item.image02}
-                                    name={item.title}
-                                    price={Number(item.price)}
-                                    slug={item.slug}
-                                />
-                            ))
-                        }
-                    </Grid>
-                </SectionBody>
-            </Section>
-
-            {/* end new arrival section */}
             
             {/* banner */}
 
@@ -151,7 +105,7 @@ const Home = () => {
 
             {/* popular product section */}
 
-            <Section>
+            {/* <Section>
                 <SectionTitle>
                     phổ biến
                 </SectionTitle>
@@ -176,7 +130,7 @@ const Home = () => {
                         }
                     </Grid>
                 </SectionBody>
-            </Section>
+            </Section> */}
 
             {/* end popular product section */}
         </Helmet>

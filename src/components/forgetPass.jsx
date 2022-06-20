@@ -4,7 +4,7 @@ import Request from "../api/instance";
 const ForgetPass = () => {
   const [user, setUser] = useState("");
   const haldeClick = () => {
-    Request(`Login/ForgotPassword/${user}`, "GET").then((res) => {
+    Request(`Login/ForgotPassword/${user}`, "PUT",{}).then((res) => {
       console.log(res);
     });
   };

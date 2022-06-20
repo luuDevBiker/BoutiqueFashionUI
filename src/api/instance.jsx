@@ -16,8 +16,8 @@ axios.create({
   },
 });
 
-export default function Request(url, method, data) {
-  return axios({
+export default async function Request(url, method, data) {
+  return await axios({
     url: baseUrl + url,
     mode : 'cors',
     method: method,

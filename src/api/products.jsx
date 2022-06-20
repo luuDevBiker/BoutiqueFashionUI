@@ -5,8 +5,8 @@ const getAllProducts = () => {
         return res.data
     })
 }
-const getAllProductsByName = (name) => {
-    return Request("ProductDetail/GetAllProductDetail?$filter=productsName eq '"+name+"'","GET",{}).then(res => {
+const getAllProductsByName = async (name) => {
+    return await Request("ProductDetail/GetAllProductDetail?$filter=productsName eq '"+name+"'","GET",{}).then(res => {
         return res.data
     })
 }
