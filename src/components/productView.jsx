@@ -1,27 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-
-import { useDispatch } from 'react-redux'
+import { getProductsByName } from '../api/products'
+import { useParams } from 'react-router-dom'
 import Button from './button'
 
-const ProductView = props => {
+const ProductView = (props) => {
+    const {product} = props
 
-    const dispatch = useDispatch()
-    let product = props.product
-
-    if (product === undefined) product = {
-        title: "",
-        price: '',
-        image01: null,
-        image02: null,
-        categorySlug: "",
-        colors: [],
-        slug: "",
-        size: [],
-        description: ""
-    }
-
-    const [previewImg, setPreviewImg] = useState([])
+    const [previewImg, setPreviewImg] = useState("")
 
     const [descriptionExpand, setDescriptionExpand] = useState(false)
 
@@ -33,16 +19,7 @@ const ProductView = props => {
         } else {
             setQuantity(quantity - 1 < 1 ? 1 : quantity - 1)
         }
-    }
-
-    // useEffect(() => {
-    //     setPreviewImg(product.image01)
-    //     setQuantity(1)
-    //     setColor(undefined)
-    //     setSize(undefined)
-    // }, [product])
-
-   
+    }   
     const addToCart = () => {
         console.log("addToCart");
     }
@@ -50,15 +27,17 @@ const ProductView = props => {
     const goToCart = () => {
         console.log("goToCart");
     }
-    console.log("image",product?.images.filter(item => item.isShow === true));
     return (
-        <div className="product">
+        <>
+ 
+            <div className="product">
             <div className="product__images">
                 <div className="product__images__list">
                     {
+                        product.images && 
                         product?.images.map((item, index) => {
                             return (
-                                <div className="product__images__list__item" onClick={() => setPreviewImg(item.thumbNail)}>
+                                <div key={index} className="product__images__list__item" onClick={() => setPreviewImg(item.thumbNail)}>
                                     <img src={item.thumbNail} alt="" />
                                 </div>
                             )
@@ -124,6 +103,9 @@ const ProductView = props => {
                 </div>
             </div>
         </div>
+             
+        </>
+        
     )
 }
 

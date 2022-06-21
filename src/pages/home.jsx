@@ -29,7 +29,8 @@ const Home = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [products,page]);
+  }, []);
+
   const handlePage = async (option) => {
     let lengthProducts = products.length;
     if (option === "next") {
@@ -42,6 +43,7 @@ const Home = () => {
       await setProductsShow(products.slice(page - 8, page));
     }
   };
+
   return (
     <Helmet title="Trang chủ">
       {/* hero slider */}
