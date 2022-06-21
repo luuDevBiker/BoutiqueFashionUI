@@ -30,7 +30,7 @@ function App() {
         <Route path="/product-detail" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/payment" element={<Payment />} />
-        <Route path='/catalog/:slug' element={<Product/>}/>
+        <Route path='/catalog/:skuId' element={<Product/>}/>
         <Route path='/catalog' element={<Catalog/>}/>
       </Routes>
       <Footer/>

@@ -5,13 +5,13 @@ const getAllProducts = () => {
         return res.data
     })
 }
-const getAllProductsByName = async (name) => {
-    return await Request("ProductDetail/GetAllProductDetail?$filter=productsName eq '"+name+"'","GET",{}).then(res => {
+const getProductsByName = async (name) => {
+    return await Request(`ProductDetail/GetAllProductDetail?$filter=skuId eq '${name}'`,"GET",{}).then(res => {
         return res.data
     })
 }
 
-export { getAllProducts , getAllProductsByName };
+export { getAllProducts , getProductsByName };
 
 
 

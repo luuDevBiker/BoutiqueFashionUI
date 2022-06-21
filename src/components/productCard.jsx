@@ -1,12 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-import { Link } from "react-router-dom";
-
 import { useDispatch } from "react-redux";
-
 import { set } from "../redux/product-modal/productModalSlice";
-
 import Button from "./button";
 
 import numberWithCommas from "../utils/numberWithCommas";
@@ -17,8 +12,8 @@ const ProductCard = (props) => {
   return (
     <div className="product-card">
       <div className="product-card__image">
-        <img src={product.images[0].thumbNail} alt="" />
-        <img src={product.images[0].thumbNail} alt="" />
+        <img src={product.images.filter(img => img.isShow == true)[0].thumbNail} alt="" />
+        <img src={product.images.filter(img => img.isShow == true)[1].thumbNail} alt="" />
       </div>
       <h3 className="product-card__name">
         {product.productsName} - {product.skuId}
