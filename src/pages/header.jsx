@@ -9,10 +9,10 @@ import anh2 from "../images/hawaiian-shirt 1.png";
 import anh5 from "../images/online-shopping 1.png";
 import "../pages/header.css";
 function Header() {
-  const signOut = ()=>{
-    localStorage.removeItem("user")
-    document.location.reload()
-  }
+  const signOut = () => {
+    localStorage.removeItem("user");
+    document.location.reload();
+  };
   return (
     <div className="mb-56">
       <div className="bgi">
@@ -42,16 +42,18 @@ function Header() {
                 <Link className="px-3 hover:underline" to={"/register"}>
                   Đăng Ký
                 </Link>
-                <Link className="px-3" to={"/cart"}>
-                  <i className="fa-solid fa-cart-shopping"> </i>
-                </Link>
               </div>
             </div>
-            <div
-              hidden={!localStorage.getItem("user")}
-              className="px-auto"
-            >
-              <div className="hover:bg-gray-200 inline-block m-8 float-right p-8 rounded-xl" onClick={()=>signOut()}>Sign Out</div>
+            <div hidden={!localStorage.getItem("user")} className="px-auto">
+              <div
+                className="hover:bg-gray-200 inline-block m-8 float-right p-8 rounded-xl"
+                onClick={() => signOut()}
+              >
+                Sign Out
+              </div>
+              <div className="hover:bg-gray-200 inline-block m-8 float-right p-8 rounded-xl">              <Link className="px-3" to={"/cart"}>
+                <i className="fa-solid fa-cart-shopping"> </i>
+              </Link></div>
             </div>
           </div>
         </div>
