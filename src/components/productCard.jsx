@@ -8,7 +8,7 @@ const ProductCard = (props) => {
   let navigate = useNavigate();
   let product = props.items;
   return (
-    <div onClick={() => {window.history.pushState(null, null, `/catalog/${product.skuId}`)}} className="product-card">
+    <div onClick={() => {window.history.pushState(null, null, `/catalog/${product.skuId}`); window.location.reload()}} className="product-card">
       <div  className="product-card__image">
         <img src={product.images.filter(img => img.isShow == true)[0].thumbNail} alt="" />
         <img src={product.images.filter(img => img.isShow == true)[1].thumbNail} alt="" />

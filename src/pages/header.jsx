@@ -13,8 +13,11 @@ function Header() {
     localStorage.removeItem("user");
     document.location.reload();
   };
+  const checkRoles = () => {
+    return JSON.parse(localStorage.getItem("user")).rolesName == "Nhân Viên"?false:true 
+  }
   return (
-    <div className="mb-56">
+    <div hidden={checkRoles()} className="mb-56">
       <div className="bgi">
         <div className="">
           <div className="grid grid-cols-3">
@@ -114,48 +117,48 @@ function Header() {
             <p className="text-center pt-2">Giày</p>
           </div>
         </div>
-        <div className="bg-white w-44 h-40 border border-black -mt-4 ml-16">
-          <div className="">
+        <div className="bg-white w-32 h-32 border border-black -mt-4	ml-20 ">
+          <div>
             <img
               src={anh2}
               alt=""
-              className="ml-11 mt-4"
+              className="w-12 h-12 center bg-red-100 mx-auto mt-4"
               width={"90px"}
               height={"50px"}
             />
             <p className="text-center pt-2">Áo</p>
           </div>
         </div>
-        <div className="bg-white w-44 h-40 border border-black -mt-4 ml-12">
+        <div className="bg-white w-32 h-32 border border-black -mt-4	ml-20 ">
           <div>
             <img
               src={anh3}
               alt=""
-              className="ml-11 mt-4"
+              className="w-12 h-12 center bg-red-100 mx-auto mt-4"
               width={"85px"}
               height={"50px"}
             />
             <p className="text-center pt-3">Quần</p>
           </div>
         </div>
-        <div className="bg-white w-44 h-40 border border-black -mt-4 ml-8">
+        <div className="bg-white w-32 h-32 border border-black -mt-4	ml-20 ">
           <div>
             <img
               src={anh4}
               alt=""
-              className="ml-12 mt-2"
+              className="w-12 h-12 center bg-red-100 mx-auto mt-4"
               width={"75px"}
               height={"50px"}
             />
             <p className="text-center pt-1 pb-1">Váy</p>
           </div>
         </div>
-        <div className="bg-white w-44 h-40 border border-black -mt-4 ml-2">
+        <div className="bg-white w-32 h-32 border border-black -mt-4	ml-20 ">
           <div>
             <img
               src={anh5}
               alt=""
-              className="ml-8 mt-2"
+              className="w-12 h-12 center bg-red-100 mx-auto mt-4"
               width={"120px"}
               height={"50px"}
             />

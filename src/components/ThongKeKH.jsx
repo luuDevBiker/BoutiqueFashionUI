@@ -53,7 +53,7 @@ const productsInit = [
   },
 ];
 
-export const StatisticalKH = () => {
+const StatisticalKH = () => {
   const [products, setFroduct] = useState([]);
   const [loading, setLoading] = useState(false);
   //call api => return data => setFroduct(data);

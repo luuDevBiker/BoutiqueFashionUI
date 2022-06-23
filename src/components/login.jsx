@@ -16,7 +16,11 @@ const Login = () => {
         if (res.status === 200) {
           toast.success("Đăng nhập thành công")
           localStorage.setItem("user",JSON.stringify(res.data))
-          document.location.href = "/"
+          if(res.data.role === "admin"){
+            window.location.href = "/admin"
+          }else{
+            window.location.href = "/"
+          }
         }
       });
   };

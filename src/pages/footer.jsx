@@ -6,9 +6,12 @@ import truck3 from "../images/cargo-truck 4.png"
 import Logo from "../images/Logo.png"
 
 function Footer() {
+    const checkRoles = () => {
+        return JSON.parse(localStorage.getItem("user")).rolesName == "Nhân Viên"?false:true 
+      }
     return (
         <>
-            <div className="footer" >
+            <div hidden={checkRoles()} className="footer" >
                 <div className="grid grid-cols-4 ml-6 my-5 gap-5 bg-amber-500 py-10 px-3 " >
                     <div className="grid grid-cols-2">
                         <div>

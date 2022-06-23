@@ -66,7 +66,7 @@ const productsInit = [
   },
 ];
 
-export const EmployeeProduct = () => {
+const EmployeeProduct = () => {
   const [products, setFroduct] = useState([]);
   const [loading, setLoading] = useState(false);
   //call api => return data => setFroduct(data);

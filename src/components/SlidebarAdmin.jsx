@@ -17,54 +17,50 @@ const SlidebarAdmin = () => {
     <hr />
     <div className="center">
         <ul>
-        <Link to="/thongkesp" style={{ textDecoration: "none"}}>
+        <Link className="inline-block" to="/admin/thongkesp" style={{ textDecoration: "none"}}>
             <li>
                 <BarChartSharpIcon className="icon" />
               <span>Thống Kê Sản Phẩm</span>
             </li>
             </Link>
-            <Link to="/thongkeKH" style={{ textDecoration: "none"}}>
+            <Link className="inline-block" to="/admin/thongkeKH" style={{ textDecoration: "none"}}>
             <li className="mn">
               <span>Thống Kê Khách Hàng</span>
             </li>
             </Link>
             <p className="title">Quản Lý</p>
-            <Link to="/qlinv" style={{ textDecoration: "none"}}>
+            <Link className="inline-block" to="/admin/qlinv" style={{ textDecoration: "none"}}>
             <li>
                 <BadgeSharpIcon className="icon" />
               <span>Quản Lý Nhân Viên</span>
             </li>
             </Link>
-            <Link to="/qlikh" style={{ textDecoration: "none"}}>
+            <Link className="inline-block" to="/admin/qlikh" style={{ textDecoration: "none"}}>
             <li>
                 <GroupSharpIcon className="icon" />
               <span>Quản Lý Khách Hàng</span>
             </li>
             </Link>
             <li>
-                <DescriptionSharpIcon className="icon" />
+                <DescriptionSharpIcon className="icon inline-block" />
               <span>Quản Lý Hóa Đơn</span>
             </li>
             <li>
-                <ReceiptLongIcon className="icon" />
+                <ReceiptLongIcon className="icon inline-block" />
               <span>Quản Lý Đơn Hàng</span>
             </li>
             <p className="title">Người Dùng</p>
-            <Link to="/hosoadmin" style={{ textDecoration: "none"}}>
+            <Link className="inline-block" to="/admin/hosoadmin" style={{ textDecoration: "none"}}>
             <li>
-                <AccountCircleSharpIcon className="icon" />
+                <AccountCircleSharpIcon className="icon inline-block" />
                 <span>Hồ Sơ</span>
             </li>
             </Link>
             <li>
-                <LogoutSharpIcon className="icon" />
+                <LogoutSharpIcon className="icon inline-block" />
                 <span>Đăng Xuất</span>
             </li>
         </ul>
-    </div>
-    <div className="bottom">
-        <div className="colorOptions"></div>
-        <div className="colorOptions"></div>
     </div>
 </div>
   )
