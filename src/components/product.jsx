@@ -28,7 +28,6 @@ const Product = (props) => {
         console.log(err);
       });
   }, []);
-  console.log("product",product);
 
   useEffect(() => {
       window.scrollTo(0,0)

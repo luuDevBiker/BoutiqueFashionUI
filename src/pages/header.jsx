@@ -8,7 +8,11 @@ import anh3 from "../images/trousers 1.png";
 import anh2 from "../images/hawaiian-shirt 1.png";
 import anh5 from "../images/online-shopping 1.png";
 import "../pages/header.css";
-function  Header() {
+function Header() {
+  const signOut = ()=>{
+    localStorage.removeItem("user")
+    document.location.reload()
+  }
   return (
     <div className="mb-56">
       <div className="bgi">
@@ -29,7 +33,7 @@ function  Header() {
                 <i className="fa-solid fa-magnifying-glass ml-4"></i>
               </div>
             </div>
-            <div className="mt-8 ml-40">
+            <div hidden={localStorage.getItem("user")} className="mt-8 ml-40">
               <div className="px-3">
                 <Link className="px-3 hover:underline" to={"/login"}>
                   Đăng Nhập
@@ -42,6 +46,12 @@ function  Header() {
                   <i className="fa-solid fa-cart-shopping"> </i>
                 </Link>
               </div>
+            </div>
+            <div
+              hidden={!localStorage.getItem("user")}
+              className="px-auto"
+            >
+              <div className="hover:bg-gray-200 inline-block m-8 float-right p-8 rounded-xl" onClick={()=>signOut()}>Sign Out</div>
             </div>
           </div>
         </div>

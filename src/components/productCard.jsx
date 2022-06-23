@@ -1,17 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
-import { set } from "../redux/product-modal/productModalSlice";
+import {useNavigate,generatePath,createPath} from "react-router";
 import Button from "./button";
-
 import numberWithCommas from "../utils/numberWithCommas";
 
 const ProductCard = (props) => {
-  const dispatch = useDispatch();
+  let navigate = useNavigate();
   let product = props.items;
   return (
-    <div className="product-card">
-      <div className="product-card__image">
+    <div onClick={() => {window.history.pushState(null, null, `/catalog/${product.skuId}`)}} className="product-card">
+      <div  className="product-card__image">
         <img src={product.images.filter(img => img.isShow == true)[0].thumbNail} alt="" />
         <img src={product.images.filter(img => img.isShow == true)[1].thumbNail} alt="" />
       </div>
@@ -29,7 +27,6 @@ const ProductCard = (props) => {
           size="sm"
           icon="bx bx-cart"
           animate={true}
-          onClick={() => dispatch(set(product.productsName))}
         >
           chọn mua
         </Button>
